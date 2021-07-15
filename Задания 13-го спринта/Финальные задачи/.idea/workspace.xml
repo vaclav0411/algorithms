@@ -20,9 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acd9982e-8e4f-44c0-861c-edcda6f51c49" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/A. Дек.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B. Калькулятор.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Простые задачи/H. Скобочная последовательность.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Простые задачи/H. Скобочная последовательность.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Задания 12-го спринта/Простые задачи/D. Хаотичность погоды.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Задания 12-го спринта/Финальные задачи/.idea/Финальные задачи.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Задания 14-го спринта/Простые задачи/A. Генератор скобок.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A. Дек.py" beforeDir="false" afterPath="$PROJECT_DIR$/a_dec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/B. Калькулятор.py" beforeDir="false" afterPath="$PROJECT_DIR$/b_calculator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Задания 14-го спринта/Простые задачи/L. Два велосипеда.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../Задания 14-го спринта/Простые задачи/L. Два велосипеда.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,10 +50,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Задания 12-го спринта/Финальные задачи" />
   </component>
-  <component name="RunManager" selected="Python.B. Калькулятор">
-    <configuration name="B. Калькулятор" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.b_calculator (1)">
+    <configuration name="b_calculator (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Финальные задачи" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -62,7 +66,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/B. Калькулятор.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/b_calculator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="b_calculator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Финальные задачи" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\Android\OneDrive\Рабочий стол\Важное\Папки\Python.yandex\Задания по алгоритмам\algorithms\Задания 13-го спринта\Финальные задачи\b_calculator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -94,7 +119,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.B. Калькулятор" />
+        <item itemvalue="Python.b_calculator (1)" />
+        <item itemvalue="Python.b_calculator" />
       </list>
     </recent_temporary>
   </component>
@@ -119,24 +145,29 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1515" height="225" key="GridCell.Tab.0.bottom" timestamp="1626045470157">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1626334426813">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="225" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1626045470157" />
-    <state width="1515" height="225" key="GridCell.Tab.0.center" timestamp="1626045470157">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1626334426813" />
+    <state width="1515" height="225" key="GridCell.Tab.0.bottom" timestamp="1626336156662">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="225" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1626045470157" />
-    <state width="1515" height="225" key="GridCell.Tab.0.left" timestamp="1626045470157">
+    <state width="1515" height="225" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1626336156662" />
+    <state width="1515" height="225" key="GridCell.Tab.0.center" timestamp="1626336156662">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="225" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1626045470157" />
-    <state width="1515" height="225" key="GridCell.Tab.0.right" timestamp="1626045470157">
+    <state width="1515" height="225" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1626336156662" />
+    <state width="1515" height="225" key="GridCell.Tab.0.left" timestamp="1626336156662">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="225" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1626045470157" />
+    <state width="1515" height="225" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1626336156662" />
+    <state width="1515" height="225" key="GridCell.Tab.0.right" timestamp="1626336156662">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1515" height="225" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1626336156662" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1626018682373">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
