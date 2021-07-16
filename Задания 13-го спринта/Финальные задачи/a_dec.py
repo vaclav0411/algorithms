@@ -1,52 +1,63 @@
-# ID: 52145901
+# ID: 52170611
+class ExcessElements(Exception):
+    pass
+
+
+class EmptyDeque(Exception):
+    pass
+
+
 class Deque:
     def __init__(self, max):
         self.max = max
-        self.queue = []
+        self.items = [None] * self.max
+        self.tail = 0
+        self.head = 0
         self.size = 0
 
     def push_back(self, value):
-        if self.size < self.max:
-            self.queue.append(value)
-            self.size += 1
+        if self.size >= self.max:
+            raise ExcessElements('error')
         else:
-            print('error')
+            self.items[self.tail] = value
+            self.tail = (self.tail + 1) % self.max
+            self.size += 1
 
     def push_front(self, value):
-        if self.size < self.max:
-            self.queue = [value] + self.queue
-            self.size += 1
+        if self.size >= self.max:
+            raise ExcessElements('error')
         else:
-            print('error')
+            self.head = (self.head - 1) % self.max - self.max
+            self.items[self.head] = value
+            self.size += 1
 
     def pop_back(self):
-        if self.queue:
-            x = self.queue.pop()
+        if not self.items[self.tail-1]:
+            raise EmptyDeque('error')
+        else:
+            self.tail -= 1
+            x = self.items[self.tail]
+            self.items[self.tail] = None
             self.size -= 1
             return x
-        else:
-            return 'error'
 
     def pop_front(self):
-        if self.queue:
-            x = self.queue.pop(0)
+        if not self.items[self.head]:
+            raise EmptyDeque('error')
+        else:
+            x = self.items[self.head]
+            self.items[self.head] = None
+            self.head += 1
             self.size -= 1
             return x
-        else:
-            return 'error'
 
 
 if __name__ == "__main__":
-    c = int(input())
-    m = int(input())
-    deq = Deque(m)
-    for i in range(c):
-        command = input().split()
-        if command[0] == 'push_back':
-            deq.push_back(command[1])
-        elif command[0] == 'push_front':
-            deq.push_front(command[1])
-        elif command[0] == 'pop_back':
-            print(deq.pop_back())
-        elif command[0] == 'pop_front':
-            print(deq.pop_front())
+    COMMANDS = ('push_back', 'push_front', 'pop_front', 'pop_back')
+    count = int(input())
+    deq = Deque(int(input()))
+    for i in range(count):
+        cmd, *prms = input().split()
+        get_method = getattr(deq, cmd, 'error')(*prms)
+        if get_method:
+            print(get_method)
