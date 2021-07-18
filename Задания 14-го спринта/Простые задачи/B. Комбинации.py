@@ -10,16 +10,19 @@ BUTTONS = {
 }
 
 
-def sequence_pressings(n, k, prefix=''):
-    amount = len(n)
-    if k == 0:
-        print(prefix)
-    # else:
-        # for i in
-        # sequence_pressings(n, k-1, prefix+'0')
-        # sequence_pressings(n, k-1, prefix+'1')
+def combinations(n, array, storage: list, prefix=''):
+    if n == 0:
+        storage.append(prefix)
+    else:
+        for i in range(len(array[n-1])):
+            letter = str(array[n-1][i])
+            combinations(n-1, array, storage, prefix=prefix+letter)
 
 
 if __name__ == "__main__":
-    n = ['2', '3']
-    print(sequence_pressings(n, 2))
+    buttons = list(input())
+    count = len(buttons)
+    array = [BUTTONS[i] for i in buttons if i in BUTTONS]
+    result = []
+    combinations(count, array[::-1], result)
+    print(' '.join(result))

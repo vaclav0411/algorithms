@@ -1,44 +1,55 @@
-# ID: 52164052
+# ID: 52178567
+class EmptyArray(Exception):
+    pass
+
+
 OPERATIONS = {
-        '+': lambda x, y: x + y,
-        '-': lambda x, y: x - y,
-        '*': lambda x, y: x * y,
-        '/': lambda x, y: x // y,
-    }
+    '+': lambda x, y: x + y,
+    '-': lambda x, y: x - y,
+    '*': lambda x, y: x * y,
+    '/': lambda x, y: x // y,
+}
 
 
 class Stack:
     def __init__(self):
-        self.stack = []
+        self.array = []
 
     def push(self, x):
-        self.stack.append(x)
+        self.array.append(x)
 
     def pop(self):
-        if self.stack:
-            popped = self.stack.pop()
+        try:
+            popped = self.array.pop()
             return popped
-        return 'error'
+        except IndexError:
+            raise EmptyArray('Пустой стек')
 
 
-def calculator(array):
-    stack = Stack()
-    for i in array:
-        value = i.lstrip('-')
-        if value.isdigit():
-            number = int(i)
-            stack.push(number)
+def calculator(array, stack=Stack(), converter=int, operations=OPERATIONS):
+    for item in array:
+        if item in operations:
+            try:
+                number_1 = stack.pop()
+                number_2 = stack.pop()
+                operate = operations[item](number_2, number_1)
+                stack.push(operate)
+            except ZeroDivisionError:
+                raise ZeroDivisionError('Деление на ноль')
+            except IndexError:
+                raise EmptyArray('Пустой стек')
+            except KeyError:
+                raise KeyError(f'{item} нет в OPERATIONS')
         else:
-            for j in OPERATIONS:
-                if i == j:
-                    number_1 = stack.pop()
-                    number_2 = stack.pop()
-                    result = OPERATIONS[j](number_2, number_1)
-                    stack.push(result)
-    return stack
+            try:
+                value = converter(item)
+                stack.push(value)
+            except Exception as error:
+                raise error
+    result = stack.array[-1]
+    return result
 
 
 if __name__ == "__main__":
     resolve = calculator(input().split())
-    result = resolve.stack[-1]
-    print(result)
+    print(resolve)
