@@ -1,8 +1,4 @@
-# ID: 52178567
-class EmptyArray(Exception):
-    pass
-
-
+# ID: 52181279
 OPERATIONS = {
     '+': lambda x, y: x + y,
     '-': lambda x, y: x - y,
@@ -20,36 +16,27 @@ class Stack:
 
     def pop(self):
         try:
-            popped = self.array.pop()
-            return popped
+            return self.array.pop()
         except IndexError:
-            raise EmptyArray('Пустой стек')
+            raise IndexError('Пустой стек')
+
+    def get_last_item(self):
+        return self.array[-1]
 
 
-def calculator(array, stack=Stack(), converter=int, operations=OPERATIONS):
+def calculator(array, stack=None, converter=int, operations=OPERATIONS):
+    stack = Stack() if stack is None else stack
     for item in array:
         if item in operations:
-            try:
-                number_1 = stack.pop()
-                number_2 = stack.pop()
-                operate = operations[item](number_2, number_1)
-                stack.push(operate)
-            except ZeroDivisionError:
-                raise ZeroDivisionError('Деление на ноль')
-            except IndexError:
-                raise EmptyArray('Пустой стек')
-            except KeyError:
-                raise KeyError(f'{item} нет в OPERATIONS')
+            number_2, number_1 = stack.pop(), stack.pop()
+            stack.push(operations[item](number_1, number_2))
         else:
             try:
-                value = converter(item)
-                stack.push(value)
-            except Exception as error:
-                raise error
-    result = stack.array[-1]
-    return result
+                stack.push(converter(item))
+            except ValueError:
+                raise ValueError(f'Нельзя преобразовать {item} в {converter}')
+    return stack.get_last_item()
 
 
 if __name__ == "__main__":
-    resolve = calculator(input().split())
-    print(resolve)
+    print(calculator(input().split()))
