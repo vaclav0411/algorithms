@@ -1,4 +1,4 @@
-# ID: 52181183
+# ID: 52184548
 class SetDequeErrors(Exception):
     pass
 
@@ -34,19 +34,17 @@ class Deque:
         self.items[self.head] = value
 
     def pop_back(self):
-        if self.items[self.tail] is None:
+        if self.size <= 0:
             raise EmptyDeque
         item = self.items[self.tail]
-        self.items[self.tail] = None
         self.size -= 1
-        self.tail -= 1
+        self.tail = (self.tail - 1) % self.max
         return item
 
     def pop_front(self):
-        if self.items[self.head] is None:
+        if self.size <= 0:
             raise EmptyDeque
         item = self.items[self.head]
-        self.items[self.head] = None
         self.size -= 1
         self.head = (self.head + 1) % self.max
         return item
@@ -61,7 +59,7 @@ if __name__ == "__main__":
             get_value = getattr(deque, command)(*parameters)
             if get_value is not None:
                 print(get_value)
-        except (ValueError, SetDequeErrors):
+        except SetDequeErrors:
             print('error')
         except AttributeError:
-            raise ValueError(f'Вызов не существующего метода {command}')
+            raise ValueError(f'Вызов несуществующего метода {command}')

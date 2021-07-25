@@ -1,4 +1,4 @@
-# ID: 52181279
+# ID: 52184612
 OPERATIONS = {
     '+': lambda x, y: x + y,
     '-': lambda x, y: x - y,
@@ -20,9 +20,6 @@ class Stack:
         except IndexError:
             raise IndexError('Пустой стек')
 
-    def get_last_item(self):
-        return self.array[-1]
-
 
 def calculator(array, stack=None, converter=int, operations=OPERATIONS):
     stack = Stack() if stack is None else stack
@@ -30,12 +27,12 @@ def calculator(array, stack=None, converter=int, operations=OPERATIONS):
         if item in operations:
             number_2, number_1 = stack.pop(), stack.pop()
             stack.push(operations[item](number_1, number_2))
-        else:
-            try:
-                stack.push(converter(item))
-            except ValueError:
-                raise ValueError(f'Нельзя преобразовать {item} в {converter}')
-    return stack.get_last_item()
+            continue
+        try:
+            stack.push(converter(item))
+        except ValueError:
+            raise ValueError(f'Нельзя преобразовать {item} в {converter.__name__}')
+    return stack.pop()
 
 
 if __name__ == "__main__":

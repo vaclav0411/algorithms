@@ -13,7 +13,7 @@ def fib_mod(n, m):
             index = n % (d-1)
             return divide[index]
         d += 1
-    return divide[-1] % m
+    return divide[-1]
 
 
 def main():
