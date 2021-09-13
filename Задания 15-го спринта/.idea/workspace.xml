@@ -20,13 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c03629a3-1041-4e48-a881-c0747e8f024a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/A. Полиномиальный хеш.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/B. Сломай меня.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/C. Префиксные хеши.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/D. Кружки.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/E. Подстроки.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/F. Анаграммная группировка.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Задания 14-го спринта/test.py" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/H. Странное сравнение.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Задания на курсе по алгоритмам(степик)/2.2 decodding Huffman.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/E. Подстроки.py" beforeDir="false" afterPath="$PROJECT_DIR$/E. Подстроки.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,5 +94,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

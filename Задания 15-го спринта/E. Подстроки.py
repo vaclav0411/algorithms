@@ -1,20 +1,23 @@
 def unique_letters(string: str):
-    array = []
-    for i, value in enumerate(string):
-        if value in array:
-            index = array.index(value)
-            for j in range(0, index+1):
-                array[j] = None
-            array.append(value)
-            continue
-        array.append(value)
+    count = {}
+    accumulator = []
+    list_arr = list(string)
     d = 0
-    for i in array:
-        if i is not None:
-            d += 1
-    return d
+    while d < len(list_arr):
+        if list_arr[d] in accumulator:
+            index = accumulator.index(list_arr[d])
+            count[len(accumulator[:d])] = accumulator[:d]
+            del accumulator[:index+1]
+        accumulator.append(list_arr[d])
+        d += 1
+    values = [[k, v] for k, v in count.items()]
+    max_count = max(list(map(lambda x: x[0], values))+[0])
+    if len(accumulator) > max_count:
+        return accumulator
+    return count.get(max_count)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     s = input()
-    print(unique_letters(s))
+    result = unique_letters(s)
+    print(result)
